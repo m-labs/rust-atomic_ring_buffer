@@ -1,0 +1,25 @@
+language: rust
+matrix:
+  include:
+    - rust: stable
+      env: FEATURES=''
+    - rust: beta
+      env: FEATURES=''
+    - rust: nightly
+      env: FEATURES=''
+    - rust: nightly
+      env: FEATURES='const_fn'
+    - rust: nightly
+      env: FEATURES='std'
+    - rust: nightly
+      env: FEATURES='alloc collections'
+    - rust: nightly
+      env: FEATURES='std alloc collections'
+script:
+   - cargo build --no-default-features --features "$FEATURES"
+notifications:
+  irc:
+    channels:
+      - "chat.freenode.net#m-labs"
+    use_notice: true
+    skip_join: true

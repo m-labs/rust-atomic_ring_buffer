@@ -1,0 +1,18 @@
+[package]
+name = "atomic_ring_buffer"
+version = "1.0.0"
+authors = ["whitequark <whitequark@whitequark.org>"]
+description = "A fixed-size multi-producer multi-consumer queue that works on bare-metal systems."
+documentation = "https://docs.rs/atomic_ring_buffer/"
+homepage = "https://github.com/m-labs/atomic_ring_buffer"
+repository = "https://github.com/m-labs/atomic_ring_buffer.git"
+readme = "README.md"
+keywords = ["atomic", "ring", "buffer"]
+license = "0BSD"
+
+[features]
+std = []
+alloc = []
+collections = []
+const_fn = []
+default = ["std"]
