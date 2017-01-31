@@ -153,7 +153,7 @@ pub struct AtomicRingBuffer<T, U: InvariantAsMut<[T]>> {
     /// Writer pointer, modulo `storage.len() * 2`.
     /// The next enqueue operation will write to storage[writer].
     writer:  AtomicUsize,
-    /// Underlying storage. Wrapped in an UnsafeCell, since a dequene and an enqueue operation
+    /// Underlying storage. Wrapped in an UnsafeCell, since a dequeue and an enqueue operation
     /// may return a &mut pointer to different parts of the storage.
     storage: UnsafeCell<U>
 }
